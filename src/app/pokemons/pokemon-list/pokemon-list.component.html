@@ -1,0 +1,15 @@
+<mat-form-field appearance="fill">
+  <mat-label>Rechercher Pokemon</mat-label>
+  <input matInput #searchBox (input)="getPokemonByRecherche(searchBox.value)">
+</mat-form-field>
+
+<mat-list class="list" infiniteScroll (scrolled)="scroll()" [scrollWindow]="false">
+  <mat-list-item *ngFor="let pokemon of pokemons?.data" (click)="getPokemonById(pokemon.id)">
+    <img matListItemAvatar src="./../../../assets/img/sprites/{{pokemon.id}}.png" alt="erreur">
+    <p matListItemLine>
+      <span>{{pokemon.id}}</span>
+      <span>.{{pokemon.name}}</span>
+    </p>
+    </mat-list-item>
+</mat-list>
+

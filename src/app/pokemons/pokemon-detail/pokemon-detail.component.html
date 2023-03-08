@@ -1,0 +1,36 @@
+<button (click)="goBack()" mat-icon-button>
+  <mat-icon>keyboard_arrow_left</mat-icon>
+</button>
+<mat-card *ngIf = "pokemon">
+ <mat-grid-list cols="2" rowHeight="2:1">
+   <mat-grid-tile>
+     <p class="id" matListItemLine>
+     <br> <img matListItemAvatar src="./../../../assets/img/official-artwork/{{pokemon.id}}.png" alt="erreur" height="40%" width="40%">
+     <br>  <span>No. {{pokemon.id | number : '3.0'}}</span>
+     </p>
+   </mat-grid-tile>
+   <mat-grid-tile>
+     <mat-list>
+         <p matListItemLine>
+         <span>{{pokemon.name}}</span>
+           <audio #ref autoplay>
+             <source src="./../../../assets/audio/{{pokemon.id}}.mp3" type="audio/mpeg">
+           </audio>
+           <button (click)="ref.play()" mat-icon-button>
+             <mat-icon>play_circle_outline</mat-icon>
+           </button>
+           <br>
+           <mat-chip *ngFor="let type of pokemon.types">
+           {{type}}
+         </mat-chip>
+           <br>
+           <span>Taille: {{pokemon.height | number : '.1'}} m</span>
+           <br>
+           <span>Poids: {{pokemon.weight | number : '.1'}} kg</span>
+       </p>
+     </mat-list>
+   </mat-grid-tile>
+ </mat-grid-list>
+  <span>{{pokemon.description}}</span>
+</mat-card>
+

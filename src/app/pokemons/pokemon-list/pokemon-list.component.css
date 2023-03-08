@@ -1,0 +1,10 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.list{
+  height : calc(100vh - 100px);
+  overflow : auto;
+}

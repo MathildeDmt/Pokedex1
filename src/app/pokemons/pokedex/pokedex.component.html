@@ -1,0 +1,5 @@
+<mat-drawer-container class="pokedex">
+  <mat-drawer mode="side" opened position="start"><app-pokemon-list (pokemonSelect)="pokemonByDetail($event)"></app-pokemon-list></mat-drawer>
+  <mat-drawer-content><div><app-pokemon-detail [pokemonId]="pokemonDetail"></app-pokemon-detail></div>
+  </mat-drawer-content>
+</mat-drawer-container>
